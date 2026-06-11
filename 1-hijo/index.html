@@ -126,11 +126,11 @@
       <div class="field-group">
         <label class="field-label">¿Cuándo te reconocieron la pensión?</label>
         <div class="regime-row">
-          <button class="regime-btn active" id="btn-nuevo" onclick="setRegime('nuevo')">
+          <button type="button" class="regime-btn active" id="btn-nuevo" onclick="setRegime('nuevo')">
             <div class="regime-btn-title">Desde febrero 2021</div>
             <div class="regime-btn-sub">Complemento RBG · 36,90€/hijo/mes · Desde 1 hijo</div>
           </button>
-          <button class="regime-btn disabled" id="btn-antiguo" >
+          <button type="button" class="regime-btn disabled" id="btn-antiguo" >
             <div class="regime-btn-title">Entre 2016 y feb. 2021</div>
             <div class="regime-btn-sub">No aplica con 1 solo hijo</div>
           </button>
@@ -159,7 +159,7 @@
       </div>
 
       <div class="divider"></div>
-      <button class="calc-btn" onclick="calcular()">Calcular mi complemento →</button>
+      <button type="button" class="calc-btn" onclick="calcular()">Calcular mi complemento →</button>
     </div>
 
     <div class="result-panel" id="result-panel">
