@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Complemento pensión 4 hijos o más 2026 | Calculadora gratuita</title>
+<meta name="description" content="Calcula el complemento de pensión con 4 hijos o más en 2026. Régimen nuevo: 147,60€/mes (máximo). Régimen antiguo: 15% sobre tu pensión. Atrasos incluidos.">
+<meta property="og:title" content="Complemento pensión 4 hijos o más 2026 | Calculadora gratuita">
+<meta property="og:description" content="Calcula el complemento de pensión con 4 hijos o más en 2026. Régimen nuevo: 147,60€/mes (máximo). Régimen antiguo: 15% sobre tu pensión. Atrasos incluidos.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calculadoracomplemento.es/4-hijos/">
+<link rel="canonical" href="https://calculadoracomplemento.es/4-hijos/">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
+  :root {
+    --ink:#1a1814;--ink-2:#4a4740;--ink-3:#8a8780;--rule:#e8e6e0;
+    --bg:#faf9f6;--bg-2:#f2f0eb;--accent:#1a6b4a;--accent-light:#e8f2ec;
+    --warn:#b85c00;--warn-light:#fdf0e0;
+    --serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{font-size:16px;scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased}
+  header{border-bottom:1px solid var(--rule);padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;background:var(--bg);position:sticky;top:0;z-index:10}
+  .logo{font-family:var(--serif);font-size:1.1rem;color:var(--ink);text-decoration:none;letter-spacing:-0.01em}
+  .header-note{font-size:.72rem;color:var(--ink-3);font-weight:300;letter-spacing:.04em;text-transform:uppercase}
+  .breadcrumb{max-width:680px;margin:0 auto;padding:1rem 2rem 0;font-size:.78rem;color:var(--ink-3)}
+  .breadcrumb a{color:var(--ink-3);text-decoration:none}.breadcrumb a:hover{color:var(--accent)}
+  .breadcrumb span{margin:0 .4rem}
+  .hero{max-width:680px;margin:0 auto;padding:2.5rem 2rem 2rem;text-align:center}
+  .hero-eyebrow{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin-bottom:1rem}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero-sub{font-size:1rem;font-weight:300;color:var(--ink-2);line-height:1.65;max-width:480px;margin:0 auto 2rem}
+  .badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+  .badge{font-size:.72rem;font-weight:500;padding:.3rem .75rem;border-radius:99px;border:1px solid var(--rule);color:var(--ink-2);background:var(--bg-2);letter-spacing:.02em}
+  .tool-wrap{max-width:640px;margin:0 auto;padding:0 2rem 4rem}
+  .tool-card{background:white;border:1px solid var(--rule);border-radius:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.05),0 8px 24px rgba(0,0,0,.04)}
+  .tool-inner{padding:2rem}
+  .regime-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:2rem}
+  .regime-btn{border:1.5px solid var(--rule);border-radius:10px;padding:1rem;cursor:pointer;background:var(--bg);transition:border-color .15s,background .15s;text-align:left}
+  .regime-btn.active{border-color:var(--accent);background:var(--accent-light)}
+  .regime-btn.disabled{opacity:.4;cursor:not-allowed}
+  .regime-btn-title{font-size:.8rem;font-weight:500;color:var(--ink);margin-bottom:.2rem}
+  .regime-btn-sub{font-size:.7rem;color:var(--ink-3);line-height:1.4}
+  .regime-btn.active .regime-btn-title{color:var(--accent)}
+  .regime-btn.active .regime-btn-sub{color:#3a7a5a}
+  .field-group{margin-bottom:1.5rem}
+  .field-label{display:block;font-size:.78rem;font-weight:500;color:var(--ink-2);margin-bottom:.5rem;letter-spacing:.01em}
+  .field-label span{font-weight:300;color:var(--ink-3)}
+  select,input[type=number],input[type=month]{width:100%;padding:.75rem 1rem;border:1.5px solid var(--rule);border-radius:8px;font-family:var(--sans);font-size:.95rem;color:var(--ink);background:var(--bg);appearance:none;-webkit-appearance:none;outline:none;transition:border-color .15s}
+  select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a8780' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+  select:focus,input:focus{border-color:var(--accent)}
+  .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  @media(max-width:480px){.field-grid{grid-template-columns:1fr}.regime-row{grid-template-columns:1fr}}
+  .field-note{font-size:.7rem;color:var(--ink-3);margin-top:.35rem;line-height:1.4}
+  .pension-field{display:none}.pension-field.visible{display:block}
+  .divider{height:1px;background:var(--rule);margin:2rem 0}
+  .calc-btn{width:100%;padding:1rem;background:var(--ink);color:white;border:none;border-radius:10px;font-family:var(--sans);font-size:.95rem;font-weight:500;cursor:pointer;transition:background .15s,transform .1s;letter-spacing:.01em}
+  .calc-btn:hover{background:#2a2820}.calc-btn:active{transform:scale(.99)}
+  .result-panel{display:none;border-top:1px solid var(--rule);padding:2rem;background:var(--bg);animation:slideIn .3s ease}
+  .result-panel.show{display:block}
+  @keyframes slideIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .result-regime-tag{display:inline-block;font-size:.7rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;padding:.3rem .75rem;border-radius:99px;margin-bottom:1.25rem}
+  .tag-nuevo{background:var(--accent-light);color:var(--accent)}.tag-antiguo{background:var(--warn-light);color:var(--warn)}
+  .result-main{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--rule)}
+  .result-main-label{font-size:.75rem;font-weight:500;color:var(--ink-3);letter-spacing:.05em;text-transform:uppercase;margin-bottom:.35rem}
+  .result-main-val{font-family:var(--serif);font-size:clamp(2.2rem,6vw,3rem);color:var(--accent);letter-spacing:-.02em;line-height:1;margin-bottom:.35rem}
+  .result-main-sub{font-size:.82rem;color:var(--ink-3);font-weight:300}
+  .result-rows{display:flex;flex-direction:column;gap:0}
+  .result-row{display:flex;justify-content:space-between;align-items:baseline;padding:.75rem 0;border-bottom:1px solid var(--rule);gap:1rem}
+  .result-row:last-child{border-bottom:none}
+  .rr-label{font-size:.85rem;color:var(--ink-2);font-weight:300}
+  .rr-val{font-size:.95rem;font-weight:500;color:var(--ink);white-space:nowrap}
+  .rr-val.accent{color:var(--accent)}
+  .rr-val.big{font-family:var(--serif);font-size:1.3rem;color:var(--accent)}
+  .result-notice{margin-top:1.25rem;padding:.875rem 1rem;background:var(--bg-2);border-radius:8px;font-size:.75rem;color:var(--ink-3);line-height:1.6;border-left:2px solid var(--rule)}
+  .result-notice strong{color:var(--ink-2);font-weight:500}
+  .no-derecho{display:none;padding:1.5rem 2rem;background:var(--warn-light);border-top:1px solid #f0d5b0;animation:slideIn .3s ease}
+  .no-derecho.show{display:block}
+  .no-derecho-title{font-size:.9rem;font-weight:500;color:var(--warn);margin-bottom:.4rem}
+  .no-derecho-body{font-size:.82rem;color:#7a4a00;line-height:1.6}
+  .content{max-width:680px;margin:0 auto;padding:3rem 2rem 5rem}
+  .content-section{margin-bottom:3rem}
+  .content-section h2{font-family:var(--serif);font-size:1.5rem;letter-spacing:-.01em;color:var(--ink);margin-bottom:1rem;line-height:1.25}
+  .content-section p{font-size:.95rem;font-weight:300;color:var(--ink-2);line-height:1.75;margin-bottom:.875rem}
+  .content-section p:last-child{margin-bottom:0}
+  .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.75rem;margin-top:1rem}
+  .related-card{border:1px solid var(--rule);border-radius:10px;padding:.875rem 1rem;text-decoration:none;background:white;transition:border-color .15s,background .15s;display:block}
+  .related-card:hover{border-color:var(--accent);background:var(--accent-light)}
+  .related-card-label{font-size:.7rem;color:var(--ink-3);margin-bottom:.2rem}
+  .related-card-val{font-size:.95rem;font-weight:500;color:var(--ink)}
+  .related-card-sub{font-size:.72rem;color:var(--ink-3);margin-top:.2rem}
+  .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.75rem;margin:1rem 0}
+  .stat{background:var(--bg-2);border-radius:8px;padding:.875rem 1rem}
+  .stat-val{font-family:var(--serif);font-size:1.4rem;color:var(--accent);margin-bottom:.2rem}
+  .stat-label{font-size:.72rem;color:var(--ink-3);line-height:1.4}
+  footer{border-top:1px solid var(--rule);padding:2rem;text-align:center}
+  .footer-disclaimer{font-size:.72rem;color:var(--ink-3);font-weight:300;line-height:1.7;max-width:560px;margin:0 auto 1rem}
+  .footer-copy{font-size:.72rem;color:var(--ink-3)}
+</style>
+</head>
+<body>
+<header>
+  <a href="/" class="logo">calculadoracomplemento.es</a>
+  <span class="header-note">Actualizado · BOE 2026 · RD 39/2026</span>
+</header>
+
+<nav class="breadcrumb">
+  <a href="/">Inicio</a><span>›</span>
+  <a href="/">Calculadora complemento</a><span>›</span>
+  4 hijos o más
+</nav>
+
+<section class="hero">
+  <p class="hero-eyebrow">Complemento con 4 hijos o más · Máximo posible · España 2026</p>
+  <h1>Complemento de pensión con <em>4 hijos o más</em> en 2026</h1>
+  <p class="hero-sub">Con 4 o más hijos se alcanza el complemento máximo. Régimen nuevo (RBG): 147,60€/mes. Régimen antiguo (2016–2021): 15% sobre tu pensión bruta — el porcentaje más alto.</p>
+  <div class="badges"><span class="badge">Sin registro</span><span class="badge">Complemento máximo</span><span class="badge">Datos BOE 2026</span></div>
+</section>
+
+<div class="tool-wrap">
+  <div class="tool-card">
+    <div class="tool-inner">
+
+      <div class="field-group">
+        <label class="field-label">¿Cuándo te reconocieron la pensión?</label>
+        <div class="regime-row">
+          <button class="regime-btn active" id="btn-nuevo" onclick="setRegime('nuevo')">
+            <div class="regime-btn-title">Desde febrero 2021</div>
+            <div class="regime-btn-sub">Complemento RBG · 36,90€/hijo/mes · Desde 1 hijo</div>
+          </button>
+          <button class="regime-btn" id="btn-antiguo" onclick="setRegime('antiguo')">
+            <div class="regime-btn-title">Entre 2016 y feb. 2021</div>
+            <div class="regime-btn-sub">Complemento maternidad · % sobre pensión · Desde 2 hijos</div>
+          </button>
+        </div>
+      </div>
+
+      <div class="field-grid">
+        <div class="field-group">
+          <label class="field-label" for="fecha">Fecha de reconocimiento <span>(mes y año)</span></label>
+          <input type="month" id="fecha" min="2021-02" max="2026-06" value="2022-06">
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="hijos">Número de hijos</label>
+          <select id="hijos"><option value="1">1 hijo/a</option>
+<option value="2">2 hijos/as</option>
+<option value="3">3 hijos/as</option>
+<option value="4" selected>4 o más</option>
+</select>
+        </div>
+      </div>
+
+      <div class="field-group pension-field" id="pension-wrap">
+        <label class="field-label" for="pension">Pensión mensual bruta <span>(€ — solo régimen 2016–2021)</span></label>
+        <input type="number" id="pension" value="1200" min="100" max="3200" step="10">
+        <p class="field-note">Importe bruto mensual en el momento del reconocimiento.</p>
+      </div>
+
+      <div class="divider"></div>
+      <button class="calc-btn" onclick="calcular()">Calcular mi complemento →</button>
+    </div>
+
+    <div class="result-panel" id="result-panel">
+      <span class="result-regime-tag" id="result-tag"></span>
+      <div class="result-main">
+        <div class="result-main-label">Complemento mensual</div>
+        <div class="result-main-val" id="res-mensual">—</div>
+        <div class="result-main-sub" id="res-anual">—</div>
+      </div>
+      <div class="result-rows">
+        <div class="result-row"><span class="rr-label">Años desde el reconocimiento</span><span class="rr-val" id="res-años">—</span></div>
+        <div class="result-row"><span class="rr-label">Atrasos estimados <em style="font-style:normal;font-size:.72rem;color:var(--ink-3)">(si nunca lo cobraste)</em></span><span class="rr-val accent" id="res-atrasos">—</span></div>
+        <div class="result-row"><span class="rr-label">Total si reclamas hoy</span><span class="rr-val big" id="res-total">—</span></div>
+      </div>
+      <p class="result-notice" id="result-notice"></p>
+    </div>
+
+    <div class="no-derecho" id="no-derecho">
+      <p class="no-derecho-title">No aplica en este caso</p>
+      <p class="no-derecho-body" id="no-derecho-body"></p>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+  
+<div class="content-section">
+  <h2>Complemento máximo: 4 hijos o más en 2026</h2>
+  <p>Con <strong>4 hijos o más</strong> se alcanza el importe máximo del complemento de pensión por brecha de género. Tanto la normativa del régimen nuevo (RBG) como la del régimen antiguo establecen un tope en 4 hijos: tener 5, 6 o más hijos no incrementa el complemento más allá de ese límite.</p>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-val">147,60 €</div><div class="stat-label">Complemento mensual máximo en 2026</div></div>
+    <div class="stat"><div class="stat-val">2.066,40 €</div><div class="stat-label">Complemento anual máximo (14 pagas)</div></div>
+    <div class="stat"><div class="stat-val">~8.400 €</div><div class="stat-label">Atrasos estimados jubilado en 2022</div></div>
+  </div>
+</div>
+
+<div class="content-section">
+  <h2>El 15% del régimen antiguo: el complemento más alto posible</h2>
+  <p>Para quienes se jubilaron entre enero de 2016 y febrero de 2021 con <strong>4 o más hijos</strong>, el complemento es del <strong>15% sobre la pensión bruta mensual</strong>, el porcentaje máximo establecido por la normativa. Ejemplos concretos: con pensión de 900€/mes → <strong>135€/mes</strong> de complemento (1.890€/año); con pensión de 1.200€/mes → <strong>180€/mes</strong> (2.520€/año); con pensión de 1.500€/mes → <strong>225€/mes</strong> (3.150€/año).</p>
+  <p>El régimen antiguo con 4 hijos resulta más favorable que el nuevo (147,60€/mes fijos) para pensionistas con pensiones superiores a <strong>984€/mes brutos</strong>. Por encima de ese umbral, el 15% supera los 147,60€ fijos del RBG.</p>
+</div>
+
+<div class="content-section">
+  <h2>Atrasos con 4 hijos: los importes más altos del complemento</h2>
+  <p>Los atrasos acumulados con 4 hijos son los más elevados posibles dentro del sistema de complemento por brecha de género. Para el <strong>régimen nuevo</strong>, una persona jubilada en febrero de 2021 que nunca cobró el complemento acumula hasta junio de 2026 aproximadamente <strong>7.600€ en atrasos</strong>. Una jubilada en 2022: aproximadamente <strong>6.300€</strong>. Una jubilada en 2023: aproximadamente <strong>4.100€</strong>.</p>
+  <p>Para el <strong>régimen antiguo</strong> con 15% y una pensión de 1.200€/mes, los atrasos desde una jubilación en 2017 hasta 2026 superan los <strong>19.000€</strong>. Son cantidades que justifican con creces el trámite de solicitud ante el INSS, que puede hacerse de forma telemática a través de la Sede Electrónica de la Seguridad Social.</p>
+  <p>Si tienes 4 o más hijos y tu pensión lleva varios años reconocida sin que hayas cobrado el complemento, la calculadora de esta página te dará una estimación precisa del importe que podrías reclamar. Estos atrasos se abonan en un único pago una vez reconocido el derecho, por lo que el impacto económico puede ser muy significativo.</p>
+</div>
+
+
+  <div class="content-section">
+    <h2>Calcula también el complemento con otro número de hijos</h2>
+    <div class="related-grid">
+      <a href="../1-hijo/" class="related-card">
+        <div class="related-card-label">Con 1 hijo</div>
+        <div class="related-card-val">36,90 €/mes</div>
+        <div class="related-card-sub">Solo régimen nuevo</div>
+      </a>
+      <a href="../2-hijos/" class="related-card">
+        <div class="related-card-label">Con 2 hijos</div>
+        <div class="related-card-val">73,80 €/mes</div>
+        <div class="related-card-sub">Ambos regímenes</div>
+      </a>
+      <a href="../3-hijos/" class="related-card">
+        <div class="related-card-label">Con 3 hijos</div>
+        <div class="related-card-val">110,70 €/mes</div>
+        <div class="related-card-sub">Ambos regímenes</div>
+      </a>
+      <a href="/" class="related-card">
+        <div class="related-card-label">Calculadora principal</div>
+        <div class="related-card-val">Todos los casos</div>
+        <div class="related-card-sub">Ambos regímenes</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p class="footer-disclaimer">Calculadora actualizada con los datos del Real Decreto 39/2026 y la normativa vigente a junio de 2026. Los resultados son orientativos y no constituyen asesoramiento jurídico. Para situaciones complejas consulta con un especialista en Seguridad Social.</p>
+  <p class="footer-copy">© 2026 calculadoracomplemento.es · Datos: BOE, LGSS art. 60, RD 39/2026</p>
+</footer>
+
+<script>
+const HISTORICO_RBG={2021:27.58,2022:29.40,2023:31.00,2024:33.20,2025:35.90,2026:36.90};
+const PORC_ANTIGUO={2:0.05,3:0.10,4:0.15};
+const CUOTA_2026=36.90,MAX_HIJOS=4,PAGAS=14,HOY_AÑO=2026,HOY_MES=6;
+let regimeActivo='nuevo';
+function fmt(n,d=2){return n.toLocaleString('es-ES',{minimumFractionDigits:d,maximumFractionDigits:d})+' €'}
+function fmtK(n){return n.toLocaleString('es-ES',{minimumFractionDigits:0,maximumFractionDigits:0})+' €'}
+function setRegime(r){
+  regimeActivo=r;
+  document.getElementById('btn-nuevo').classList.toggle('active',r==='nuevo');
+  document.getElementById('btn-antiguo').classList.toggle('active',r==='antiguo');
+  document.getElementById('pension-wrap').classList.toggle('visible',r==='antiguo');
+  const f=document.getElementById('fecha');
+  if(r==='nuevo'){f.min='2021-02';f.max='2026-06';if(f.value<'2021-02')f.value='2022-06';}
+  else{f.min='2016-01';f.max='2021-02';if(f.value>'2021-02')f.value='2019-06';}
+  ocultarResultado();
+}
+function calcular(){
+  const fechaStr=document.getElementById('fecha').value;
+  const hijos=parseInt(document.getElementById('hijos').value);
+  const pension=parseFloat(document.getElementById('pension').value)||0;
+  if(!fechaStr){alert('Por favor, indica la fecha de reconocimiento de la pensión.');return;}
+  const[añoJ,mesJ]=fechaStr.split('-').map(Number);
+  ocultarResultado();
+  if(regimeActivo==='nuevo')calcNuevo(añoJ,mesJ,hijos);
+  else calcAntiguo(añoJ,mesJ,hijos,pension);
+}
+function calcNuevo(añoJ,mesJ,hijos){
+  const hijosEf=Math.min(hijos,MAX_HIJOS);
+  const mensual=hijosEf*CUOTA_2026,anual=mensual*PAGAS;
+  let atrasos=0;
+  for(let y=añoJ;y<=HOY_AÑO;y++){
+    const cuotaAño=(HISTORICO_RBG[y]||CUOTA_2026)*hijosEf;
+    const mInicio=(y===añoJ)?mesJ:1,mFin=(y===HOY_AÑO)?HOY_MES:12;
+    atrasos+=cuotaAño*(mFin-mInicio+1);
+  }
+  const años=((HOY_AÑO-añoJ)+(HOY_MES-mesJ)/12).toFixed(1),total=atrasos+(mensual*3);
+  mostrarResultado({tag:'tag-nuevo',tagText:'Régimen RBG · desde febrero 2021',mensual,anual,años,atrasos,total,
+    notice:`Cuantía 2026: ${CUOTA_2026}€/hijo × ${hijosEf} hijo${hijosEf>1?'s':''} × 14 pagas = ${fmt(anual)}/año. Atrasos calculados desde ${añoJ}. Base legal: art. 60 LGSS, RD 39/2026. Resultado orientativo.`});
+}
+function calcAntiguo(añoJ,mesJ,hijos,pension){
+  if(hijos<2){mostrarNoDerecho('El complemento de maternidad/paternidad del período 2016–2021 requiere mínimo 2 hijos. Con 1 hijo, usa el régimen nuevo (RBG) si tu pensión es posterior a febrero de 2021.');return;}
+  if(pension<=0){alert('Introduce el importe de tu pensión mensual bruta.');return;}
+  const hijosKey=Math.min(hijos,4),porc=PORC_ANTIGUO[hijosKey];
+  const mensual=pension*porc,anual=mensual*PAGAS;
+  const mesesTotal=(HOY_AÑO-añoJ)*12+(HOY_MES-mesJ);
+  const atrasos=mensual*mesesTotal,años=(mesesTotal/12).toFixed(1),total=atrasos+(mensual*3);
+  mostrarResultado({tag:'tag-antiguo',tagText:'Régimen maternidad/paternidad · 2016–2021',mensual,anual,años,atrasos,total,
+    notice:`Porcentaje: ${porc*100}% sobre ${fmt(pension)} = ${fmt(mensual)}/mes. Base legal: art. 60 LGSS 2016–2021. Resultado orientativo.`});
+}
+function mostrarResultado(d){
+  document.getElementById('no-derecho').classList.remove('show');
+  document.getElementById('result-tag').className='result-regime-tag '+d.tag;
+  document.getElementById('result-tag').textContent=d.tagText;
+  document.getElementById('res-mensual').textContent=fmt(d.mensual)+'/mes';
+  document.getElementById('res-anual').textContent=fmt(d.anual)+'/año (14 pagas)';
+  document.getElementById('res-años').textContent=d.años+' años';
+  document.getElementById('res-atrasos').textContent=fmtK(Math.round(d.atrasos));
+  document.getElementById('res-total').textContent=fmtK(Math.round(d.total));
+  document.getElementById('result-notice').innerHTML=d.notice;
+  const p=document.getElementById('result-panel');
+  p.classList.add('show');p.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function mostrarNoDerecho(msg){
+  document.getElementById('no-derecho-body').textContent=msg;
+  document.getElementById('no-derecho').classList.add('show');
+  document.getElementById('no-derecho').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function ocultarResultado(){
+  document.getElementById('result-panel').classList.remove('show');
+  document.getElementById('no-derecho').classList.remove('show');
+}
+document.getElementById('fecha').addEventListener('change',function(){
+  const v=this.value;if(!v)return;
+  const p=v.split('-'),esN=(parseInt(p[0])>2021)||(parseInt(p[0])===2021&&parseInt(p[1])>=2);
+  document.getElementById('pension-wrap').style.display=esN?'none':'block';
+});
+
+setRegime('nuevo');
+</script>
+</body>
+</html>
