@@ -510,6 +510,14 @@
     font-size: 0.72rem;
     color: var(--ink-3);
   }
+
+  .hijos-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.75rem;margin-top:1rem}
+  .hijos-card{border:1px solid var(--rule);border-radius:10px;padding:.875rem 1rem;text-decoration:none;background:white;transition:border-color .15s,background .15s;display:block;text-align:center}
+  .hijos-card:hover{border-color:var(--accent);background:var(--accent-light)}
+  .hijos-card-num{font-family:var(--serif);font-size:1.5rem;color:var(--accent);margin-bottom:.2rem}
+  .hijos-card-label{font-size:.72rem;color:var(--ink-3);margin-bottom:.3rem}
+  .hijos-card-val{font-size:.85rem;font-weight:500;color:var(--ink)}
+  .hijos-card-sub{font-size:.7rem;color:var(--ink-3);margin-top:.15rem}
 </style>
 </head>
 <body>
@@ -618,6 +626,37 @@
 
 <!-- CONTENIDO SEO -->
 <div class="content">
+
+  <div class="content-section">
+    <h2>Calcula el complemento según tu número de hijos</h2>
+    <p>Selecciona tu caso para ver el importe exacto, ejemplos calculados y los atrasos estimados según el año de tu jubilación.</p>
+    <div class="hijos-nav">
+      <a href="/1-hijo/" class="hijos-card">
+        <div class="hijos-card-num">1</div>
+        <div class="hijos-card-label">hijo/a</div>
+        <div class="hijos-card-val">36,90 €/mes</div>
+        <div class="hijos-card-sub">Solo régimen nuevo</div>
+      </a>
+      <a href="/2-hijos/" class="hijos-card">
+        <div class="hijos-card-num">2</div>
+        <div class="hijos-card-label">hijos/as</div>
+        <div class="hijos-card-val">73,80 €/mes</div>
+        <div class="hijos-card-sub">Ambos regímenes</div>
+      </a>
+      <a href="/3-hijos/" class="hijos-card">
+        <div class="hijos-card-num">3</div>
+        <div class="hijos-card-label">hijos/as</div>
+        <div class="hijos-card-val">110,70 €/mes</div>
+        <div class="hijos-card-sub">Ambos regímenes</div>
+      </a>
+      <a href="/4-hijos/" class="hijos-card">
+        <div class="hijos-card-num">4+</div>
+        <div class="hijos-card-label">hijos/as</div>
+        <div class="hijos-card-val">147,60 €/mes</div>
+        <div class="hijos-card-sub">Complemento máximo</div>
+      </a>
+    </div>
+  </div>
 
   <div class="content-section">
     <h2>Qué es el complemento de brecha de género</h2>
@@ -767,11 +806,13 @@ function setRegime(r) {
 
 // ─── FORMATO ─────────────────────────────────────────────────
 function fmt(n, dec = 2) {
-  return n.toLocaleString('es-ES', { minimumFractionDigits: dec, maximumFractionDigits: dec }) + ' €';
+  var p = n.toFixed(dec).split('.');
+  p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  return p.join(',') + ' €';
 }
 
 function fmtK(n) {
-  return n.toLocaleString('es-ES', { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + ' €';
+  return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' €';
 }
 
 // ─── CALCULAR ─────────────────────────────────────────────────

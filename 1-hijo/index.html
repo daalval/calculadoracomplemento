@@ -249,8 +249,8 @@ const HISTORICO_RBG={2021:27.58,2022:29.40,2023:31.00,2024:33.20,2025:35.90,2026
 const PORC_ANTIGUO={2:0.05,3:0.10,4:0.15};
 const CUOTA_2026=36.90,MAX_HIJOS=4,PAGAS=14,HOY_AÑO=2026,HOY_MES=6;
 let regimeActivo='nuevo';
-function fmt(n,d=2){return n.toLocaleString('es-ES',{minimumFractionDigits:d,maximumFractionDigits:d})+' €'}
-function fmtK(n){return n.toLocaleString('es-ES',{minimumFractionDigits:0,maximumFractionDigits:0})+' €'}
+function fmt(n,d=2){var p=n.toFixed(d).split('.');p[0]=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,'.');return p.join(',')+' €'}
+function fmtK(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €'}
 function setRegime(r){
   regimeActivo=r;
   document.getElementById('btn-nuevo').classList.toggle('active',r==='nuevo');
