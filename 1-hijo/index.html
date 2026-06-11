@@ -241,7 +241,7 @@
 
 <footer>
   <p class="footer-disclaimer">Calculadora actualizada con los datos del Real Decreto 39/2026 y la normativa vigente a junio de 2026. Los resultados son orientativos y no constituyen asesoramiento jurídico. Para situaciones complejas consulta con un especialista en Seguridad Social.</p>
-  <p class="footer-copy">© 2026 calculadoracomplemento.es · Datos: BOE, LGSS art. 60, RD 39/2026</p>
+  <p class="footer-copy">© 2026 calculadoracomplemento.es · <a href="/privacidad/" style="color:inherit">Privacidad y cookies</a> · Datos: BOE, LGSS art. 60, RD 39/2026</p>
 </footer>
 
 <script>
@@ -324,5 +324,93 @@ document.getElementById('fecha').addEventListener('change',function(){
 
 setRegime('nuevo');
 </script>
+<!--
+  BANNER DE COOKIES — calculadoracomplemento.es
+  Añadir este bloque justo antes de </body> en todas las páginas.
+  Ya incluye: estilos CSS, HTML del banner y lógica JS.
+-->
+
+<!-- COOKIE BANNER -->
+<style>
+#cookie-banner{
+  position:fixed;bottom:0;left:0;right:0;z-index:9999;
+  background:#1a1814;color:#f2f0eb;
+  padding:1.25rem 1.5rem;
+  display:flex;flex-wrap:wrap;align-items:center;gap:1rem;
+  justify-content:space-between;
+  font-family:'DM Sans',system-ui,sans-serif;
+  font-size:.82rem;font-weight:300;line-height:1.6;
+  box-shadow:0 -2px 20px rgba(0,0,0,.15);
+  transform:translateY(100%);
+  transition:transform .3s ease;
+}
+#cookie-banner.show{transform:translateY(0)}
+#cookie-banner a{color:#7fc4a0;text-decoration:underline;text-underline-offset:2px}
+#cookie-banner a:hover{color:#a8d9be}
+.cookie-text{flex:1;min-width:240px}
+.cookie-text strong{font-weight:500;color:#fff}
+.cookie-btns{display:flex;gap:.625rem;flex-shrink:0;flex-wrap:wrap}
+.cookie-btn{padding:.55rem 1.1rem;border-radius:6px;border:none;
+  font-family:inherit;font-size:.8rem;font-weight:500;cursor:pointer;
+  transition:opacity .15s}
+.cookie-btn:hover{opacity:.85}
+.cookie-btn-accept{background:#1a6b4a;color:#fff}
+.cookie-btn-reject{background:transparent;color:#a8a6a0;border:1px solid #3a3830}
+.cookie-btn-reject:hover{color:#f2f0eb;border-color:#5a5850}
+</style>
+
+<div id="cookie-banner" role="dialog" aria-label="Aviso de cookies" aria-live="polite">
+  <div class="cookie-text">
+    <strong>Usamos cookies.</strong> Este sitio utiliza cookies de Google Analytics y Google AdSense para analizar el tráfico y mostrar anuncios relevantes. Puedes aceptarlas o rechazarlas. <a href="/privacidad/" target="_blank">Más información</a>
+  </div>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-btn-reject" onclick="cookieReject()">Solo necesarias</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()">Aceptar todas</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var COOKIE_KEY='cc_consent';
+  var consent=localStorage.getItem(COOKIE_KEY);
+
+  function loadAnalytics(){
+    // Sustituye G-854J0T42H0 por tu ID real de Google Analytics
+    var s=document.createElement('script');
+    s.src='https://www.googletagmanager.com/gtag/js?id=G-854J0T42H0';
+    s.async=true;document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    gtag('config','G-854J0T42H0',{anonymize_ip:true});
+    window._gtag=gtag;
+  }
+
+  function showBanner(){
+    setTimeout(function(){
+      document.getElementById('cookie-banner').classList.add('show');
+    },800);
+  }
+
+  window.cookieAccept=function(){
+    localStorage.setItem(COOKIE_KEY,'accepted');
+    document.getElementById('cookie-banner').classList.remove('show');
+    loadAnalytics();
+  };
+
+  window.cookieReject=function(){
+    localStorage.setItem(COOKIE_KEY,'rejected');
+    document.getElementById('cookie-banner').classList.remove('show');
+  };
+
+  if(!consent){
+    showBanner();
+  } else if(consent==='accepted'){
+    loadAnalytics();
+  }
+})();
+</script>
+<!-- FIN COOKIE BANNER -->
+
 </body>
 </html>
