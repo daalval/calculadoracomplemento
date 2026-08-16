@@ -95,7 +95,10 @@ Cifras de referencia (verificadas a julio 2026, pueden quedar desactualizadas
 - Retroactividad: completa si pensión anterior al 15/05/2025; 3 meses si es posterior.
 - STS 3173/2025: 25 de junio de 2025. STJUE: 15 de mayo de 2025 (C-623/23, C-626/23).
 - Solo UN progenitor puede cobrarlo por el mismo hijo (se lo queda quien
-  tenga la pensión, o suma de pensiones, más baja).
+  tenga la pensión, o suma de pensiones, más baja; empate → quien solicitó
+  primero). Base legal: art. 60.1 LGSS (menor cuantía) y art. 60.7 LGSS
+  (método de cómputo y desempate por fecha) — no el 60.2, que regula la
+  extinción del complemento del primer progenitor al reconocerse al segundo.
 
 ## SEO — checklist por página nueva
 - [ ] `<title>` único, con keyword + año, bajo 60 caracteres
