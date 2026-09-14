@@ -22,8 +22,12 @@
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{font-family:var(--sans);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
-  header{border-bottom:1px solid var(--rule);padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;background:var(--bg)}
+  header{border-bottom:1px solid var(--rule);padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;background:var(--bg);flex-wrap:wrap;gap:.75rem 1.25rem}
   .logo{font-family:var(--serif);font-size:1.1rem;color:var(--ink);text-decoration:none}
+  .site-nav{display:flex;flex-wrap:wrap;gap:.15rem;align-items:center}
+  .site-nav a{font-size:.82rem;color:var(--ink-2);text-decoration:none;padding:.45rem .7rem;border-radius:6px}
+  .site-nav a:hover{color:var(--accent);background:var(--accent-light);text-decoration:none}
+  .site-nav a[aria-current="page"]{color:var(--ink);font-weight:500}
   .content{max-width:680px;margin:0 auto;padding:3rem 2rem 5rem}
   h1{font-family:var(--serif);font-size:2rem;letter-spacing:-.02em;color:var(--ink);margin-bottom:.5rem}
   .updated{font-size:.78rem;color:var(--ink-3);margin-bottom:3rem}
@@ -36,6 +40,9 @@
   a:hover{text-decoration:underline}
   .divider{height:1px;background:var(--rule);margin:2rem 0}
   footer{border-top:1px solid var(--rule);padding:2rem;text-align:center;font-size:.72rem;color:var(--ink-3)}
+  .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.35rem .9rem;margin:0 auto 1rem;max-width:640px}
+  .footer-links a{font-size:.75rem;color:var(--ink-3);text-decoration:none}
+  .footer-links a:hover{color:var(--accent);text-decoration:none}
 </style>
 </head>
 <body>
@@ -50,6 +57,12 @@
     </svg>
     <span style="font-family:var(--serif);font-size:1.05rem;color:var(--ink);letter-spacing:-0.01em;line-height:1.2">calculadora<br>complemento<span style="font-size:.7rem;vertical-align:super;color:var(--ink-3)">.es</span></span>
   </a>
+  <nav class="site-nav" aria-label="Principal">
+    <a href="/">Calculadora</a>
+    <a href="/soy-elegible/">¿Tengo derecho?</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/contacto/">Contacto</a>
+  </nav>
 </header>
 
 <div class="content">
@@ -57,7 +70,7 @@
   <p class="updated">Última actualización: 11 de junio de 2026</p>
 
   <h2>1. Responsable del sitio web</h2>
-  <p>El presente sitio web <strong>calculadoracomplemento.es</strong> es titularidad de un particular con residencia en España. Para cualquier consulta relacionada con la privacidad y el tratamiento de datos, puedes ponerte en contacto a través del correo electrónico indicado en el pie de página.</p>
+  <p>El presente sitio web <strong>calculadoracomplemento.es</strong> es titularidad de un particular con residencia en España. Para cualquier consulta relacionada con la privacidad y el tratamiento de datos, escribe a <strong>keg-identical-avid@duck.com</strong> o usa la página de <a href="/contacto/">contacto</a>. El <a href="/aviso-legal/">aviso legal</a> describe las condiciones de uso del sitio.</p>
 
   <h2>2. Datos que recopilamos</h2>
   <p>Este sitio web <strong>no recopila datos personales de forma directa</strong>. La calculadora funciona íntegramente en el navegador del usuario (lado del cliente) sin enviar ningún dato a servidores propios. No existe ningún formulario de registro, inicio de sesión ni base de datos de usuarios.</p>
@@ -114,7 +127,15 @@
 </div>
 
 <footer>
-  © 2026 calculadoracomplemento.es · <a href="/">Inicio</a> · <a href="/privacidad/">Privacidad</a>
+  <p class="footer-links">
+    <a href="/">Calculadora</a>
+    <a href="/soy-elegible/">¿Tengo derecho?</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/contacto/">Contacto</a>
+    <a href="/aviso-legal/">Aviso legal</a>
+    <a href="/privacidad/">Privacidad</a>
+  </p>
+  © 2026 calculadoracomplemento.es
 </footer>
 
 </body>

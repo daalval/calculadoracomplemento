@@ -35,6 +35,11 @@
   .logo-text{font-family:var(--serif);font-size:1.05rem;color:var(--ink);letter-spacing:-0.01em;line-height:1.2}
   .logo-text sup{font-size:.7rem;color:var(--ink-3)}
   .header-note{font-size:.72rem;color:var(--ink-3);font-weight:300;letter-spacing:.04em;text-transform:uppercase}
+  header{flex-wrap:wrap;gap:.75rem 1.25rem}
+  .site-nav{display:flex;flex-wrap:wrap;gap:.15rem;align-items:center}
+  .site-nav a{font-size:.82rem;color:var(--ink-2);text-decoration:none;padding:.45rem .7rem;border-radius:6px}
+  .site-nav a:hover{color:var(--accent);background:var(--accent-light)}
+  .site-nav a[aria-current="page"]{color:var(--ink);font-weight:500}
 
   .breadcrumb{max-width:720px;margin:0 auto;padding:1rem 2rem 0;font-size:.78rem;color:var(--ink-3)}
   .breadcrumb a{color:var(--ink-3);text-decoration:none}.breadcrumb a:hover{color:var(--accent)}
@@ -86,6 +91,9 @@
   footer{border-top:1px solid var(--rule);padding:2rem;text-align:center}
   .footer-disclaimer{font-size:.72rem;color:var(--ink-3);font-weight:300;line-height:1.7;max-width:560px;margin:0 auto 1rem}
   .footer-copy{font-size:.72rem;color:var(--ink-3)}
+  .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.35rem .9rem;margin:0 auto 1rem;max-width:640px}
+  .footer-links a{font-size:.75rem;color:var(--ink-3);text-decoration:none}
+  .footer-links a:hover{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -100,7 +108,12 @@
     </svg>
     <span class="logo-text">calculadora<br>complemento<sup>.es</sup></span>
   </a>
-  <span class="header-note">Guía · BOE 2026</span>
+  <nav class="site-nav" aria-label="Principal">
+    <a href="/">Calculadora</a>
+    <a href="/soy-elegible/">¿Tengo derecho?</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/contacto/">Contacto</a>
+  </nav>
 </header>
 
 <nav class="breadcrumb">
@@ -197,7 +210,15 @@
 
 <footer>
   <p class="footer-disclaimer">Esta guía tiene carácter informativo y orientativo. Los plazos y procedimientos pueden variar según la Sede Electrónica de la Seguridad Social. Consulta siempre la información oficial actualizada en sede.seg-social.gob.es antes de iniciar cualquier trámite.</p>
-  <p class="footer-copy">© 2026 calculadoracomplemento.es · <a href="/privacidad/" style="color:inherit">Privacidad y cookies</a> · Datos: BOE, LGSS art. 60, RD 39/2026</p>
+  <p class="footer-links">
+    <a href="/">Calculadora</a>
+    <a href="/soy-elegible/">¿Tengo derecho?</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/contacto/">Contacto</a>
+    <a href="/aviso-legal/">Aviso legal</a>
+    <a href="/privacidad/">Privacidad</a>
+  </p>
+  <p class="footer-copy">© 2026 calculadoracomplemento.es · Datos: BOE, LGSS art. 60, RD 39/2026</p>
 </footer>
 
 <style>

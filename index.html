@@ -55,6 +55,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
     background: var(--bg);
     position: sticky;
     top: 0;
@@ -69,12 +71,26 @@
     letter-spacing: -0.01em;
   }
 
-  .header-note {
-    font-size: 0.72rem;
-    color: var(--ink-3);
-    font-weight: 300;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem;
+    align-items: center;
+  }
+  .site-nav a {
+    font-size: 0.82rem;
+    color: var(--ink-2);
+    text-decoration: none;
+    padding: 0.45rem 0.7rem;
+    border-radius: 6px;
+  }
+  .site-nav a:hover {
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+  .site-nav a[aria-current="page"] {
+    color: var(--ink);
+    font-weight: 500;
   }
 
   /* HERO */
@@ -516,6 +532,20 @@
     font-size: 0.72rem;
     color: var(--ink-3);
   }
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35rem 0.9rem;
+    margin: 0 auto 1rem;
+    max-width: 640px;
+  }
+  .footer-links a {
+    font-size: 0.75rem;
+    color: var(--ink-3);
+    text-decoration: none;
+  }
+  .footer-links a:hover { color: var(--accent); }
 
   .hijos-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.75rem;margin-top:1rem}
   .hijos-card{border:1px solid var(--rule);border-radius:10px;padding:.875rem 1rem;text-decoration:none;background:white;transition:border-color .15s,background .15s;display:block;text-align:center}
@@ -538,7 +568,12 @@
     </svg>
     <span style="font-family:var(--serif);font-size:1.05rem;color:var(--ink);letter-spacing:-0.01em;line-height:1.2">calculadora<br>complemento<span style="font-size:.7rem;vertical-align:super;color:var(--ink-3)">.es</span></span>
   </a>
-  <span class="header-note">Actualizado · BOE 2026 · RD 39/2026</span>
+  <nav class="site-nav" aria-label="Principal">
+    <a href="/" aria-current="page">Calculadora</a>
+    <a href="/soy-elegible/">¿Tengo derecho?</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/contacto/">Contacto</a>
+  </nav>
 </header>
 
 <section class="hero">
@@ -801,14 +836,22 @@
 
   <div class="content-section">
     <h2>Aviso legal</h2>
-    <p>Esta calculadora tiene carácter exclusivamente orientativo y aplica las fórmulas públicas establecidas en el artículo 60 de la Ley General de la Seguridad Social y el Real Decreto 39/2026. Los resultados son estimaciones y no constituyen asesoramiento jurídico ni garantizan el importe que el INSS reconocerá en cada caso concreto. Consulta con un profesional especializado antes de tomar decisiones basadas en estos cálculos.</p>
+    <p>Esta calculadora tiene carácter exclusivamente orientativo y aplica las fórmulas públicas establecidas en el artículo 60 de la Ley General de la Seguridad Social y el Real Decreto 39/2026. Los resultados son estimaciones y no constituyen asesoramiento jurídico ni garantizan el importe que el INSS reconocerá en cada caso concreto. Consulta con un profesional especializado antes de tomar decisiones basadas en estos cálculos. El <a href="/aviso-legal/" style="color:var(--accent)">aviso legal completo</a> y la página <a href="/sobre/" style="color:var(--accent)">sobre este sitio</a> detallan titularidad, fuentes y límites del contenido.</p>
   </div>
 
 </div>
 
 <footer>
   <p class="footer-disclaimer">Calculadora actualizada con los datos del Real Decreto 39/2026 y la normativa vigente a junio de 2026. Los resultados son orientativos. Esta herramienta no constituye asesoramiento jurídico. Para situaciones complejas, consulta con un especialista en Seguridad Social.</p>
-  <p class="footer-copy">© 2026 calculadoracomplemento.es · <a href="/privacidad/" style="color:inherit">Privacidad y cookies</a> · Datos: BOE, LGSS art. 60, RD 39/2026</p>
+  <p class="footer-links">
+    <a href="/">Calculadora</a>
+    <a href="/soy-elegible/">¿Tengo derecho?</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/contacto/">Contacto</a>
+    <a href="/aviso-legal/">Aviso legal</a>
+    <a href="/privacidad/">Privacidad</a>
+  </p>
+  <p class="footer-copy">© 2026 calculadoracomplemento.es · Datos: BOE, LGSS art. 60, RD 39/2026</p>
 </footer>
 
 <script>

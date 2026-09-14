@@ -30,6 +30,11 @@
   header{border-bottom:1px solid var(--rule);padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;background:var(--bg);position:sticky;top:0;z-index:10}
   .logo{font-family:var(--serif);font-size:1.1rem;color:var(--ink);text-decoration:none;letter-spacing:-0.01em}
   .header-note{font-size:.72rem;color:var(--ink-3);font-weight:300;letter-spacing:.04em;text-transform:uppercase}
+  header{flex-wrap:wrap;gap:.75rem 1.25rem}
+  .site-nav{display:flex;flex-wrap:wrap;gap:.15rem;align-items:center}
+  .site-nav a{font-size:.82rem;color:var(--ink-2);text-decoration:none;padding:.45rem .7rem;border-radius:6px}
+  .site-nav a:hover{color:var(--accent);background:var(--accent-light)}
+  .site-nav a[aria-current="page"]{color:var(--ink);font-weight:500}
   .breadcrumb{max-width:680px;margin:0 auto;padding:1rem 2rem 0;font-size:.78rem;color:var(--ink-3)}
   .breadcrumb a{color:var(--ink-3);text-decoration:none}.breadcrumb a:hover{color:var(--accent)}
   .breadcrumb span{margin:0 .4rem}
@@ -104,6 +109,9 @@
   footer{border-top:1px solid var(--rule);padding:2rem;text-align:center}
   .footer-disclaimer{font-size:.72rem;color:var(--ink-3);font-weight:300;line-height:1.7;max-width:560px;margin:0 auto 1rem}
   .footer-copy{font-size:.72rem;color:var(--ink-3)}
+  .footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.35rem .9rem;margin:0 auto 1rem;max-width:640px}
+  .footer-links a{font-size:.75rem;color:var(--ink-3);text-decoration:none}
+  .footer-links a:hover{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -117,7 +125,12 @@
     </svg>
     <span style="font-family:var(--serif);font-size:1.05rem;color:var(--ink);letter-spacing:-0.01em;line-height:1.2">calculadora<br>complemento<span style="font-size:.7rem;vertical-align:super;color:var(--ink-3)">.es</span></span>
   </a>
-  <span class="header-note">Actualizado · BOE 2026 · RD 39/2026</span>
+  <nav class="site-nav" aria-label="Principal">
+    <a href="/">Calculadora</a>
+    <a href="/soy-elegible/">¿Tengo derecho?</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/contacto/">Contacto</a>
+  </nav>
 </header>
 
 <nav class="breadcrumb">
@@ -259,7 +272,15 @@
 
 <footer>
   <p class="footer-disclaimer">Calculadora actualizada con los datos del Real Decreto 39/2026 y la normativa vigente a junio de 2026. Los resultados son orientativos y no constituyen asesoramiento jurídico. Para situaciones complejas consulta con un especialista en Seguridad Social.</p>
-  <p class="footer-copy">© 2026 calculadoracomplemento.es · <a href="/privacidad/" style="color:inherit">Privacidad y cookies</a> · Datos: BOE, LGSS art. 60, RD 39/2026</p>
+  <p class="footer-links">
+    <a href="/">Calculadora</a>
+    <a href="/soy-elegible/">¿Tengo derecho?</a>
+    <a href="/sobre/">Sobre</a>
+    <a href="/contacto/">Contacto</a>
+    <a href="/aviso-legal/">Aviso legal</a>
+    <a href="/privacidad/">Privacidad</a>
+  </p>
+  <p class="footer-copy">© 2026 calculadoracomplemento.es · Datos: BOE, LGSS art. 60, RD 39/2026</p>
 </footer>
 
 <script>
