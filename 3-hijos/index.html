@@ -14,6 +14,12 @@
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
+try{if(localStorage.getItem('cc_consent')==='accepted'){gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});}}catch(e){}
+</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5030748322562598" crossorigin="anonymous"></script>
 <link rel="canonical" href="https://calculadoracomplemento.es/3-hijos/">
 <style>
@@ -314,6 +320,7 @@
     <a href="/contacto/">Contacto</a>
     <a href="/aviso-legal/">Aviso legal</a>
     <a href="/privacidad/">Privacidad</a>
+    <a href="#" onclick="cookieOpen();return false;">Cookies</a>
   </p>
   <p class="footer-copy">© 2026 calculadoracomplemento.es · Datos: BOE, LGSS art. 60, RD 39/2026</p>
 </footer>
@@ -438,18 +445,27 @@ setRegime('nuevo');
     <strong>Usamos cookies.</strong> Este sitio utiliza cookies de Google Analytics y Google AdSense para analizar el tráfico y mostrar anuncios relevantes. Puedes aceptarlas o rechazarlas. <a href="/privacidad/" target="_blank">Más información</a>
   </div>
   <div class="cookie-btns">
-    <button class="cookie-btn cookie-btn-reject" onclick="cookieReject()">Solo necesarias</button>
-    <button class="cookie-btn cookie-btn-accept" onclick="cookieAccept()">Aceptar todas</button>
+    <button type="button" class="cookie-btn cookie-btn-reject" onclick="cookieReject()">Solo necesarias</button>
+    <button type="button" class="cookie-btn cookie-btn-accept" onclick="cookieAccept()">Aceptar todas</button>
   </div>
 </div>
 
 <script>
 (function(){
   var COOKIE_KEY='cc_consent';
-  var consent=localStorage.getItem(COOKIE_KEY);
-
+  function applyConsent(granted){
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent','update',{
+      ad_storage:granted?'granted':'denied',
+      ad_user_data:granted?'granted':'denied',
+      ad_personalization:granted?'granted':'denied',
+      analytics_storage:granted?'granted':'denied'
+    });
+  }
   function loadAnalytics(){
-    // Sustituye G-854J0T42H0 por tu ID real de Google Analytics
+    if(window._gaLoaded)return;
+    window._gaLoaded=true;
     var s=document.createElement('script');
     s.src='https://www.googletagmanager.com/gtag/js?id=G-854J0T42H0';
     s.async=true;document.head.appendChild(s);
@@ -459,29 +475,23 @@ setRegime('nuevo');
     gtag('config','G-854J0T42H0',{anonymize_ip:true});
     window._gtag=gtag;
   }
-
-  function showBanner(){
-    setTimeout(function(){
-      document.getElementById('cookie-banner').classList.add('show');
-    },800);
-  }
-
+  function banner(){return document.getElementById('cookie-banner');}
+  function hideBanner(){var b=banner();if(b)b.classList.remove('show');}
+  function showBannerNow(){var b=banner();if(b)b.classList.add('show');}
   window.cookieAccept=function(){
-    localStorage.setItem(COOKIE_KEY,'accepted');
-    document.getElementById('cookie-banner').classList.remove('show');
-    loadAnalytics();
+    try{localStorage.setItem(COOKIE_KEY,'accepted');}catch(e){}
+    hideBanner();applyConsent(true);loadAnalytics();
   };
-
   window.cookieReject=function(){
-    localStorage.setItem(COOKIE_KEY,'rejected');
-    document.getElementById('cookie-banner').classList.remove('show');
+    try{localStorage.setItem(COOKIE_KEY,'rejected');}catch(e){}
+    hideBanner();applyConsent(false);
   };
-
-  if(!consent){
-    showBanner();
-  } else if(consent==='accepted'){
-    loadAnalytics();
-  }
+  window.cookieOpen=function(){showBannerNow();};
+  var consent=null;
+  try{consent=localStorage.getItem(COOKIE_KEY);}catch(e){}
+  if(!consent){setTimeout(showBannerNow,800);}
+  else if(consent==='accepted'){applyConsent(true);loadAnalytics();}
+  else{applyConsent(false);}
 })();
 </script>
 <!-- FIN COOKIE BANNER -->
