@@ -19,8 +19,8 @@
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
-try{var cc=localStorage.getItem('cc_consent');if(cc==='accepted'){gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});}if(cc==='accepted'||cc==='rejected'){document.documentElement.classList.add('cc-choice-made');}}catch(e){}
 </script>
+<script src="/consent.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5030748322562598" crossorigin="anonymous"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap');
@@ -140,75 +140,6 @@ try{var cc=localStorage.getItem('cc_consent');if(cc==='accepted'){gtag('consent'
   </p>
   <p class="footer-copy">© 2026 calculadoracomplemento.es · LSSI-CE art. 10</p>
 </footer>
-
-<style>
-#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1814;color:#f2f0eb;padding:1.25rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem;justify-content:space-between;font-family:'DM Sans',system-ui,sans-serif;font-size:.82rem;font-weight:300;line-height:1.6;box-shadow:0 -2px 20px rgba(0,0,0,.15);transform:translateY(0);transition:transform .3s ease,visibility .3s ease}
-html.cc-choice-made #cookie-banner{transform:translateY(100%);visibility:hidden;pointer-events:none}
-html.cc-choice-made #cookie-banner.show{transform:translateY(0);visibility:visible;pointer-events:auto}
-#cookie-banner a{color:#7fc4a0;text-decoration:underline;text-underline-offset:2px}
-#cookie-banner a:hover{color:#a8d9be}
-.cookie-text{flex:1;min-width:240px}
-.cookie-text strong{font-weight:500;color:#fff}
-.cookie-btns{display:flex;gap:.625rem;flex-shrink:0;flex-wrap:wrap}
-.cookie-btn{padding:.55rem 1.1rem;border-radius:6px;border:none;font-family:inherit;font-size:.8rem;font-weight:500;cursor:pointer;transition:opacity .15s}
-.cookie-btn:hover{opacity:.85}
-.cookie-btn-accept{background:#1a6b4a;color:#fff}
-.cookie-btn-reject{background:transparent;color:#a8a6a0;border:1px solid #3a3830}
-.cookie-btn-reject:hover{color:#f2f0eb;border-color:#5a5850}
-</style>
-<div id="cookie-banner" role="dialog" aria-label="Aviso de cookies" aria-live="polite">
-  <div class="cookie-text"><strong>Usamos cookies.</strong> Este sitio utiliza cookies de Google Analytics y Google AdSense para analizar el tráfico y mostrar anuncios relevantes. Puedes aceptarlas o rechazarlas. <a href="/privacidad/" target="_blank">Más información</a></div>
-  <div class="cookie-btns">
-    <button type="button" class="cookie-btn cookie-btn-reject" onclick="cookieReject()">Solo necesarias</button>
-    <button type="button" class="cookie-btn cookie-btn-accept" onclick="cookieAccept()">Aceptar todas</button>
-  </div>
-</div>
-<script>
-(function(){
-  var COOKIE_KEY='cc_consent';
-  function applyConsent(granted){
-    window.dataLayer=window.dataLayer||[];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent','update',{
-      ad_storage:granted?'granted':'denied',
-      ad_user_data:granted?'granted':'denied',
-      ad_personalization:granted?'granted':'denied',
-      analytics_storage:granted?'granted':'denied'
-    });
-  }
-  function loadAnalytics(){
-    if(window._gaLoaded)return;
-    window._gaLoaded=true;
-    var s=document.createElement('script');
-    s.src='https://www.googletagmanager.com/gtag/js?id=G-854J0T42H0';
-    s.async=true;document.head.appendChild(s);
-    window.dataLayer=window.dataLayer||[];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js',new Date());
-    gtag('config','G-854J0T42H0',{anonymize_ip:true});
-    window._gtag=gtag;
-  }
-  function banner(){return document.getElementById('cookie-banner');}
-  function hideBanner(){var b=banner();if(b)b.classList.remove('show');}
-  function showBannerNow(){var b=banner();if(b)b.classList.add('show');}
-  window.cookieAccept=function(){
-    try{localStorage.setItem(COOKIE_KEY,'accepted');}catch(e){}
-    document.documentElement.classList.add('cc-choice-made');
-    hideBanner();applyConsent(true);loadAnalytics();
-  };
-  window.cookieReject=function(){
-    try{localStorage.setItem(COOKIE_KEY,'rejected');}catch(e){}
-    document.documentElement.classList.add('cc-choice-made');
-    hideBanner();applyConsent(false);
-  };
-  window.cookieOpen=function(){document.documentElement.classList.add('cc-choice-made');showBannerNow();};
-  var consent=null;
-  try{consent=localStorage.getItem(COOKIE_KEY);}catch(e){}
-  if(consent==='accepted'||consent==='rejected'){document.documentElement.classList.add('cc-choice-made');}
-  if(consent==='accepted'){applyConsent(true);loadAnalytics();}
-  else if(consent==='rejected'){applyConsent(false);}
-})();
-</script>
 
 </body>
 </html>
