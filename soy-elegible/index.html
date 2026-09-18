@@ -20,7 +20,7 @@
 window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
-try{if(localStorage.getItem('cc_consent')==='accepted'){gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});}}catch(e){}
+try{var cc=localStorage.getItem('cc_consent');if(cc==='accepted'){gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});}if(cc==='accepted'||cc==='rejected'){document.documentElement.classList.add('cc-choice-made');}}catch(e){}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5030748322562598" crossorigin="anonymous"></script>
 
@@ -365,10 +365,11 @@ function evaluate() {
   font-family:'DM Sans',system-ui,sans-serif;
   font-size:.82rem;font-weight:300;line-height:1.6;
   box-shadow:0 -2px 20px rgba(0,0,0,.15);
-  transform:translateY(100%);
-  transition:transform .3s ease;
+  transform:translateY(0);
+  transition:transform .3s ease,visibility .3s ease;
 }
-#cookie-banner.show{transform:translateY(0)}
+html.cc-choice-made #cookie-banner{transform:translateY(100%);visibility:hidden;pointer-events:none}
+html.cc-choice-made #cookie-banner.show{transform:translateY(0);visibility:visible;pointer-events:auto}
 #cookie-banner a{color:#7fc4a0;text-decoration:underline;text-underline-offset:2px}
 #cookie-banner a:hover{color:#a8d9be}
 .cookie-text{flex:1;min-width:240px}
@@ -423,18 +424,20 @@ function evaluate() {
   function showBannerNow(){var b=banner();if(b)b.classList.add('show');}
   window.cookieAccept=function(){
     try{localStorage.setItem(COOKIE_KEY,'accepted');}catch(e){}
+    document.documentElement.classList.add('cc-choice-made');
     hideBanner();applyConsent(true);loadAnalytics();
   };
   window.cookieReject=function(){
     try{localStorage.setItem(COOKIE_KEY,'rejected');}catch(e){}
+    document.documentElement.classList.add('cc-choice-made');
     hideBanner();applyConsent(false);
   };
-  window.cookieOpen=function(){showBannerNow();};
+  window.cookieOpen=function(){document.documentElement.classList.add('cc-choice-made');showBannerNow();};
   var consent=null;
   try{consent=localStorage.getItem(COOKIE_KEY);}catch(e){}
-  if(!consent){setTimeout(showBannerNow,800);}
-  else if(consent==='accepted'){applyConsent(true);loadAnalytics();}
-  else{applyConsent(false);}
+  if(consent==='accepted'||consent==='rejected'){document.documentElement.classList.add('cc-choice-made');}
+  if(consent==='accepted'){applyConsent(true);loadAnalytics();}
+  else if(consent==='rejected'){applyConsent(false);}
 })();
 </script>
 <!-- FIN COOKIE BANNER -->
