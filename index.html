@@ -617,7 +617,7 @@ gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personali
       <div class="field-grid">
         <div class="field-group">
           <label class="field-label" for="fecha">Fecha de reconocimiento <span>(mes y año)</span></label>
-          <input type="month" id="fecha" min="2016-01" max="2026-06" value="2022-06">
+          <input type="month" id="fecha" min="2016-01" value="2022-06">
         </div>
         <div class="field-group">
           <label class="field-label" for="hijos">Número de hijos</label>
@@ -860,7 +860,7 @@ gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personali
 </div>
 
 <footer>
-  <p class="footer-disclaimer">Calculadora actualizada con los datos del Real Decreto 39/2026 y la normativa vigente a junio de 2026. Los resultados son orientativos. Esta herramienta no constituye asesoramiento jurídico. Para situaciones complejas, consulta con un especialista en Seguridad Social.</p>
+  <p class="footer-disclaimer">Calculadora actualizada con los datos del Real Decreto 39/2026 y la normativa vigente a septiembre de 2026. Los resultados son orientativos. Esta herramienta no constituye asesoramiento jurídico. Para situaciones complejas, consulta con un especialista en Seguridad Social.</p>
   <p class="footer-links">
     <a href="/">Calculadora</a>
     <a href="/soy-elegible/">¿Tengo derecho?</a>
@@ -889,7 +889,16 @@ const CUOTA_2026   = 36.90;
 const MAX_HIJOS    = 4;
 const PAGAS        = 14;
 const HOY_AÑO      = 2026;
-const HOY_MES      = 6; // junio
+const HOY_MES      = 9; // septiembre
+
+// ─── UTILIDADES DE FECHA DE CORTE (mantenimiento automático) ───
+function getCutoffMonthStr() {
+  const meses = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  return meses[HOY_MES - 1] + ' de ' + HOY_AÑO;
+}
+function getCutoffMax() {
+  return HOY_AÑO + '-' + String(HOY_MES).padStart(2, '0');
+}
 
 let regimeActivo = 'nuevo';
 
@@ -901,9 +910,10 @@ function setRegime(r) {
   document.getElementById('pension-wrap').classList.toggle('visible', r === 'antiguo');
 
   const fechaEl = document.getElementById('fecha');
+  const cutoff = getCutoffMax();
   if (r === 'nuevo') {
     fechaEl.min = '2021-02';
-    fechaEl.max = '2026-06';
+    fechaEl.max = cutoff;
     if (fechaEl.value < '2021-02') fechaEl.value = '2022-06';
     document.getElementById('hijos').querySelector('option[value="1"]').disabled = false;
   } else {

@@ -180,7 +180,7 @@ gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personali
       <div class="field-grid">
         <div class="field-group">
           <label class="field-label" for="fecha">Fecha de reconocimiento <span>(mes y año)</span></label>
-          <input type="month" id="fecha" min="2021-02" max="2026-06" value="2022-06">
+          <input type="month" id="fecha" min="2021-02" value="2022-06">
         </div>
         <div class="field-group">
           <label class="field-label" for="hijos">Número de hijos</label>
@@ -239,16 +239,16 @@ gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personali
 
 <div class="content-section">
   <h2>Atrasos con 1 hijo, mes a mes de cada año</h2>
-  <p>Los atrasos no se calculan multiplicando 36,90 € por todos los meses desde que te jubilaste. Cada año tiene su propia cuota (la de entonces), porque el complemento se revaloriza. Hasta junio de 2026, si nunca lo cobraste y el derecho nace con la pensión, la estimación de esta calculadora es:</p>
+  <p>Los atrasos no se calculan multiplicando 36,90 € por todos los meses desde que te jubilaste. Cada año tiene su propia cuota (la de entonces), porque el complemento se revaloriza. Hasta septiembre de 2026, si nunca lo cobraste y el derecho nace con la pensión, la estimación de esta calculadora es:</p>
   <table class="case-table">
     <thead><tr><th>Fecha de la pensión</th><th>Atrasos (1 hijo)</th></tr></thead>
     <tbody>
-      <tr><td>Febrero 2021</td><td>2.078,78 €</td></tr>
-      <tr><td>Enero 2022</td><td>1.775,40 €</td></tr>
-      <tr><td>Enero 2023</td><td>1.422,60 €</td></tr>
-      <tr><td>Enero 2024</td><td>1.050,60 €</td></tr>
-      <tr><td>Enero 2025</td><td>652,20 €</td></tr>
-      <tr><td>Enero 2026</td><td>221,40 €</td></tr>
+      <tr><td>Febrero 2021</td><td>2.189,48 €</td></tr>
+      <tr><td>Enero 2022</td><td>1.886,10 €</td></tr>
+      <tr><td>Enero 2023</td><td>1.533,30 €</td></tr>
+      <tr><td>Enero 2024</td><td>1.161,30 €</td></tr>
+      <tr><td>Enero 2025</td><td>762,90 €</td></tr>
+      <tr><td>Enero 2026</td><td>332,10 €</td></tr>
     </tbody>
   </table>
   <p class="note-sm">Suma las cuotas históricas (2021 = 27,58 € · 2022 = 29,40 € · 2023 = 31,00 € · 2024 = 33,20 € · 2025 = 35,90 € · 2026 = 36,90 €) por los meses de cada año. La tabla histórica completa está en <a href="/cuantias-historicas-complemento/" style="color:var(--accent)">cuantías 2021–2026</a>. Resultado orientativo: el INSS aplica además las reglas de retroactividad (3 meses con carácter general, o desde el hecho causante si hubo denegación previa o la pensión es anterior al 15/05/2025, según el caso).</p>
@@ -311,7 +311,7 @@ gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personali
 </div>
 
 <footer>
-  <p class="footer-disclaimer">Calculadora actualizada con los datos del Real Decreto 39/2026 y la normativa vigente a junio de 2026. Los resultados son orientativos y no constituyen asesoramiento jurídico. Para situaciones complejas consulta con un especialista en Seguridad Social.</p>
+  <p class="footer-disclaimer">Calculadora actualizada con los datos del Real Decreto 39/2026 y la normativa vigente a septiembre de 2026. Los resultados son orientativos y no constituyen asesoramiento jurídico. Para situaciones complejas consulta con un especialista en Seguridad Social.</p>
   <p class="footer-links">
     <a href="/">Calculadora</a>
     <a href="/soy-elegible/">¿Tengo derecho?</a>
@@ -327,17 +327,19 @@ gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personali
 <script>
 const HISTORICO_RBG={2021:27.58,2022:29.40,2023:31.00,2024:33.20,2025:35.90,2026:36.90};
 const PORC_ANTIGUO={2:0.05,3:0.10,4:0.15};
-const CUOTA_2026=36.90,MAX_HIJOS=4,PAGAS=14,HOY_AÑO=2026,HOY_MES=6;
+const CUOTA_2026=36.90,MAX_HIJOS=4,PAGAS=14,HOY_AÑO=2026,HOY_MES=9;
 let regimeActivo='nuevo';
 function fmt(n,d=2){var p=n.toFixed(d).split('.');p[0]=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,'.');return p.join(',')+' €'}
 function fmtK(n){return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+' €'}
+function getCutoffMax(){return HOY_AÑO+'-'+String(HOY_MES).padStart(2,'0');}
 function setRegime(r){
   regimeActivo=r;
   document.getElementById('btn-nuevo').classList.toggle('active',r==='nuevo');
   document.getElementById('btn-antiguo').classList.toggle('active',r==='antiguo');
   document.getElementById('pension-wrap').classList.toggle('visible',r==='antiguo');
   const f=document.getElementById('fecha');
-  if(r==='nuevo'){f.min='2021-02';f.max='2026-06';if(f.value<'2021-02')f.value='2022-06';}
+  const cutoff=getCutoffMax();
+  if(r==='nuevo'){f.min='2021-02';f.max=cutoff;if(f.value<'2021-02')f.value='2022-06';}
   else{f.min='2016-01';f.max='2021-02';if(f.value>'2021-02')f.value='2019-06';}
   ocultarResultado();
 }
